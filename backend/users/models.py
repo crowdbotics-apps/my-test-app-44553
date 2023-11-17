@@ -24,6 +24,25 @@ class User(AbstractUser):
         max_length=255,
     )
     email = models.CharField(
+        null=True,
+        blank=True,
+        max_length=255,
+    )
+    passowrd = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
+    balance = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
+    created_at = models.DateField(
+        auto_now=True,
+        null=True,
+        blank=True,
+    )
+    wallet_adress = models.CharField(
         max_length=255,
         null=True,
         blank=True,
