@@ -58,6 +58,9 @@ SITE_ID = 1
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = env.bool("SECURE_REDIRECT", default=False)
 
+ADMIN_USERNAME = os.environ.get('DJANGO_ADMIN_USERNAME', 'admin')
+ADMIN_PASSWORD = os.environ.get('DJANGO_ADMIN_PASSWORD', 'password123')
+
 
 # Application definition
 
