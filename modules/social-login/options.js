@@ -1,26 +1,30 @@
-import { StyleSheet, Dimensions } from "react-native"; // Web OAuth client id obtained from google developer console
+import { StyleSheet, Dimensions } from "react-native";
 
-const GOOGLE_WEB_CLIENT_ID = "XXXXXX.apps.googleusercontent.com"; // iOS OAuth client id obtained from google developer console
+// Web OAuth client id obtained from google developer console
+const GOOGLE_WEB_CLIENT_ID = "XXXXXX.apps.googleusercontent.com";
+// iOS OAuth client id obtained from google developer console
+const GOOGLE_IOS_CLIENT_ID = "YYYYYY.apps.googleusercontent.com";
+// Apple service id obtained from apple developer account.
+const APPLE_SERVICE_ID = "com.crowdbotics.APP_NAME";
 
-const GOOGLE_IOS_CLIENT_ID = "YYYYYY.apps.googleusercontent.com"; // Apple service id obtained from apple developer account.
+// URL to redirect to once login is successfull
+const APPLE_REDIRECT_CALLBACK =
+  "https://your-app-here.com/accounts/apple/login/callback/";
 
-const APPLE_SERVICE_ID = "com.crowdbotics.APP_NAME"; // URL to redirect to once login is successfull
+// Source link for foreground image
+const LOGO_URL =
+  "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/cb-icon.png";
+// Source link for background image
+const BACKGROUND_URL =
+  "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/halfbg.png";
 
-const APPLE_REDIRECT_CALLBACK = "https://your-app-here.com/accounts/apple/login/callback/"; // Source link for foreground image
+const { width, height } = Dimensions.get("window");
 
-const LOGO_URL = "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/cb-icon.png"; // Source link for background image
-
-const BACKGROUND_URL = "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/halfbg.png";
-const {
-  width,
-  height
-} = Dimensions.get("window");
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 
-const scale = size => width / guidelineBaseWidth * size;
-
-const scaleVertical = size => height / guidelineBaseHeight * size;
+const scale = (size) => (width / guidelineBaseWidth) * size;
+const scaleVertical = (size) => (height / guidelineBaseHeight) * size;
 
 const Color = {
   malibu: "#46E1FD",
@@ -32,6 +36,7 @@ const Color = {
   google: "#4285F4",
   red: "red"
 };
+
 const styles = StyleSheet.create({
   screen: {
     flexDirection: "column",
@@ -69,10 +74,8 @@ const styles = StyleSheet.create({
     marginVertical: 5
   },
   appleButton: {
-    width: "97%",
-    // You must specify a width
-    height: 44,
-    // You must specify a height
+    width: "97%", // You must specify a width
+    height: 44, // You must specify a height
     marginHorizontal: 5,
     marginTop: 2
   },
@@ -181,10 +184,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     elevation: 3,
-    shadowOffset: {
-      height: 10,
-      width: 10
-    },
+    shadowOffset: { height: 10, width: 10 },
     shadowOpacity: 0.3,
     shadowColor: Color.steel
   },
@@ -257,6 +257,7 @@ const styles = StyleSheet.create({
     marginLeft: 12
   }
 });
+
 export default {
   styles: styles,
   Color: Color,
